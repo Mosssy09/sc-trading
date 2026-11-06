@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a0f15">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="description" content="Star Citizen trade routes for your ship">
+<title>Star Citizen Trading</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="top-row">
+    <button class="back" id="back" hidden aria-label="Back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <div class="top-title"><img src="icons/icon-192.png" alt="" id="logo"><h1 id="title">Star Citizen Trading</h1></div>
+    <button class="icon-btn" id="refresh" aria-label="Refresh data"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 11-2.3-5.7M20 4v5h-5"/></svg></button>
+  </div>
+  <div class="chips">
+    <button class="chip" id="chip-ship"><svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 2-7 2-3 9-3-9-7-2 7-2z"/></svg><span id="ship-label">Choose ship</span></button>
+    <button class="chip" id="chip-budget"><span id="budget-label">Invest: no limit</span></button>
+    <span class="chip live" id="chip-live" hidden></span>
+    <span class="chip" id="chip-age"><small id="age-label">Loading…</small></span>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page on" id="p-home"></section>
+  <section class="page" id="p-routes"></section>
+  <section class="page" id="p-sell"></section>
+  <section class="page" id="p-ships"></section>
+  <section class="page" id="p-more"></section>
+  <section class="page" id="p-commodities"></section>
+  <section class="page" id="p-stock"></section>
+  <section class="page" id="p-terminal"></section>
+  <section class="page" id="p-log"></section>
+  <section class="page" id="p-alerts"></section>
+  <section class="page" id="p-settings"></section>
+  <section class="page" id="p-about"></section>
+</main>
+
+<nav class="tabs" id="tabs">
+  <button data-go="home" class="on"><svg viewBox="0 0 24 24"><path d="M3 13h8V3H3zm0 8h8v-6H3zm10 0h8V11h-8zm0-18v6h8V3z"/></svg>Home</button>
+  <button data-go="routes"><svg viewBox="0 0 24 24"><path d="M3 17.5l6.2-6.2 4 4L21 7.5V12h2V4h-8v2h4.6l-6.4 6.4-4-4L1.6 16.1z"/></svg>Routes</button>
+  <button data-go="sell"><svg viewBox="0 0 24 24"><path d="M3 7l9-4 9 4v10l-9 4-9-4zm9-1.8L6.3 7.6 12 10l5.7-2.4zM11 12L5 9.4v6.3l6 2.7zm2 0v6.4l6-2.7V9.4z"/></svg>Sell</button>
+  <button data-go="ships"><svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 2-7 2-3 9-3-9-7-2 7-2z"/></svg>Ships</button>
+  <button data-go="more"><svg viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg>More<span class="badge-dot" id="more-badge" hidden></span></button>
+</nav>
+
+<div class="sheet-bg" id="sheet-bg"></div>
+<div class="sheet" id="sheet"><div class="grab"></div><div id="sheet-body"></div></div>
+<div class="toast" id="toast"></div>
+
+<datalist id="dl-commodities"></datalist>
+<datalist id="dl-terminals"></datalist>
+<script src="engine.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
